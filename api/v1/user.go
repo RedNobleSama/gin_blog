@@ -3,7 +3,6 @@ package v1
 import (
 	"GinBlog/model"
 	"GinBlog/utils/errmsg"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
@@ -15,11 +14,6 @@ func AddUser(c *gin.Context) {
 	_ = c.ShouldBind(&data)
 	code := model.CheckUser(data.Username)
 	if code == errmsg.SUCCESS {
-		fmt.Println(
-			"用户名",data.Username,
-			"密码",data.Password,
-			"角色",data.Role,
-			)
 		model.CreateUser(&data)
 	}
 	if code == errmsg.ErrorUsernameUsed {
@@ -57,10 +51,29 @@ func GetUsers(c *gin.Context) {
 
 //编辑用户
 func EditUser(c *gin.Context) {
-
+	var data model.User
+	_ = c.ShouldBind(&data)
+	code := model.CheckUser(data.Username)
+	if code == errmsg.SUCCESS {
+		id, _ := strconv.Atoi(c.Param("id"))
+		model.EditUser(id, &data)
+	}
+	if code == errmsg.ErrorUsernameUsed {
+		code = errmsg.ErrorUsernameUsed
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"status": code,
+		"data" : data,
+		"msg": errmsg.GetErrMsg(code),
+	})
 }
 
 //删除用户
 func DeletUser(c *gin.Context) {
-
+	id, _ := strconv.Atoi(c.Param("id"))
+	code := model.DeleteUser(id)
+	c.JSON(http.StatusOK, gin.H{
+		"status": code,
+		"msg": errmsg.GetErrMsg(code),
+	})
 }

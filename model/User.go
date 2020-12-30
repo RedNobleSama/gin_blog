@@ -27,7 +27,7 @@ func CheckUser(username string) int {
 
 // 新增用户
 func CreateUser(data *User) int {
-	data.Password = string(HashPassword([]byte(data.Password)))
+	//data.Password = string(HashPassword([]byte(data.Password)))
 	err := db.Create(&data).Error
 	if err !=nil {
 		return errmsg.ERROR
@@ -46,6 +46,12 @@ func GetUsers(pageSize int, pageNum int) []User {
 	return users
 }
 
+// 钩子函数密码加密
+func (u *User)BeforeSave() {
+	u.Password = string(HashPassword([]byte(u.Password)))
+}
+
+
 // 用户密码加密
 func HashPassword(password []byte) []byte {
 	hashPWS, err := bcrypt.GenerateFromPassword(password,10)
@@ -53,4 +59,25 @@ func HashPassword(password []byte) []byte {
 		fmt.Println("密码格式有问题", err.Error())
 	}
 	return hashPWS
+}
+
+// 编辑用户信息
+func EditUser(id int, data *User) int {
+	var user User
+	err := db.Model(&user).Where("id=?", id).Updates(map[string]interface{}{"username": data.Username, "role": data.Role})
+	if err != nil {
+		return errmsg.ERROR
+	}
+	return errmsg.SUCCESS
+}
+
+
+// 删除用户
+func DeleteUser(id int) int {
+	var user User
+	err := db.Where("id = ?", id).Delete(&user).Error
+	if err != nil{
+		return errmsg.ERROR
+	}
+	return errmsg.SUCCESS
 }

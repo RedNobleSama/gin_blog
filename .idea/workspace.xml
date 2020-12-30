@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="226ffda0-7545-4250-80ea-6d0e4d2cedf8" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/api/v1/article.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/login.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Article.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/User.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/router.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/errmsg/errmsg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Category.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/Category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/errmsg/errmsg.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/errmsg/errmsg.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,15 @@
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Programmer/Go Programmer" />
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -50,7 +55,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="go build GinBlog" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
