@@ -9,5 +9,6 @@ func main() {
 	//引用数据库
 	model.InitDb()
 
-	routes.InitRouter()
+	r := routes.InitRouter()
+	_ = r.Run()
 }

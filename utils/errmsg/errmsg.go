@@ -14,6 +14,7 @@ const (
 	ErrorToeknTypeWrong = 1007
 	// code = 2000...文章模块的错误
 
+
 	// code = 3000...分类模块的错误
 	ErrorCategoryUsed     = 3001
 	ErrorCategoryNotExist = 3002
